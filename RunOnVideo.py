@@ -34,16 +34,16 @@ def frameForModel(frame):
     return f
     
 
-videoPath = './input.mp4'
+videoPath = './20200405_201620_1.mp4'
 modelPath = './saved/saved.h5'
 
 model = load_model(modelPath)
 
 
 font                   = cv2.FONT_HERSHEY_SIMPLEX
-fontScale              = 4
-fontColor              = (0, 0, 255)
-lineType               = 5
+fontScale              = 6
+fontColor              = (255, 0, 0)
+lineType               = 10
 
 
 count = 0
@@ -57,7 +57,7 @@ cap = cv2.VideoCapture(videoPath)
 
 rotateCode = checkVideoRotation(videoPath)
 
-out = cv2.VideoWriter('output.mp4', -1, 30.0, (1080, 1920))
+out = cv2.VideoWriter('output.mp4', -1, 60.0, (1080, 1920))
 
 if not cap.isOpened():
     print("Error while opening the video:", videoPath)
@@ -101,7 +101,7 @@ while cap.isOpened():
         
         cv2.putText(frame,
                     category, 
-                    (20, 1880), 
+                    (20, 1700), 
                     font, 
                     fontScale,
                     fontColor,
@@ -109,7 +109,7 @@ while cap.isOpened():
         
         cv2.putText(frame,
                     "Count: " + str(count), 
-                    (20, 100), 
+                    (20, 400), 
                     font, 
                     fontScale,
                     fontColor,

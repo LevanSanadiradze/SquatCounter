@@ -38,7 +38,6 @@ datagen = ImageDataGenerator(
     height_shift_range = 0.05,
     brightness_range = [1, 1.5],
     horizontal_flip = True,
-    validation_split = 0.1,
     dtype = tf.float64)
 
 train_generator = datagen.flow_from_directory(
