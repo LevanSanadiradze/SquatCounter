@@ -46,7 +46,6 @@ train_generator = datagen.flow_from_directory(
     color_mode = 'grayscale',
     batch_size = 32,
     shuffle = True,
-    subset = "training",
     class_mode='categorical')
 
 
